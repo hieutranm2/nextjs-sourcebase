@@ -2,7 +2,7 @@
   "recommendations": [
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
-		"EditorConfig.EditorConfig",
+    "EditorConfig.EditorConfig",
     "dsznajder.es7-react-js-snippets",
     "bradlc.vscode-tailwindcss",
     "lightyen.tailwindcss-intellisense-twin",

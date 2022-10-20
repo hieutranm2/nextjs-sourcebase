@@ -1,5 +1,8 @@
 {
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
+  },
+  "[jsonc]": {
+    "editor.formatOnSave": true
   }
 }
