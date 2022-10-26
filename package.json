@@ -2,6 +2,9 @@
   "name": "fika-sass-client",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=16.0.0 <17.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -11,9 +14,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -o public/storybook",
     "test-storybook": "test-storybook",
-    "test-visual": "jest",
-    "test-visual:update": "jest --updateSnapshot",
-    "test": "concurrently -k -s first -n \"SERVE,TEST\" \"npx http-server public/storybook --port 6006 --silent\" \"npx wait-on tcp:6006 && yarn test-storybook --maxWorkers=2 && yarn test-visual --silent\""
+    "test-visual": "jest storyshots.test.js",
+    "test-visual:updateSnapshot": "yarn test-visual --updateSnapshot",
+    "test": "concurrently -k -s first -n \"START:CI,TEST\" \"yarn storybook --ci --quiet\" \"npx wait-on tcp:6006 && yarn test-storybook --maxWorkers=2 && yarn test-visual --silent --maxWorkers=2\""
   },
   "dependencies": {
     "next": "12.3.1",
