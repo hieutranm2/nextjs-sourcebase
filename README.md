@@ -1,34 +1,104 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">介護SASS</h1>
 
+## Before You Begin
+- Install **Node.js 16 LTS**
+- Install **Yarn**
+- Install **Git**
+- Install **Visual Studio Code** and all recommended extensions
+
+## Project Structure
+```
+public
+   |-- favicon.ico
+   |-- images
+       |-- vercel.svg
+   |-- storybook
+src
+   |-- components
+   |   |-- button
+   |   |   |-- Button.module.css
+   |   |   |-- Button.stories.tsx
+   |   |   |-- Button.tsx
+   |-- pages
+   |   |-- api
+   |   |   |-- hello.ts
+   |   |-- login
+   |   |   |-- Login.module.css
+   |   |   |-- index.page.tsx
+   |   |-- index.page.tsx
+   |   |-- _app.page.tsx
+   |   |-- _document.page.tsx
+   |-- styles
+   |   |-- Home.module.css
+   |   |-- globals.css
+.env.local
+```
 ## Getting Started
-
-First, run the development server:
+1. Install all dependencies with Yarn
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Set up `.env.local`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+$ cp .env.local.example .env.local
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+3. Run the development server
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```bash
+$ yarn dev
 
-## Learn More
+# or you can specify your development port as below:
+$ yarn dev -p YOUR_PORT
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. **(Optional)** Run Storybook on the local
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+$ yarn storybook
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Production Build
 
-## Deploy on Vercel
+1. Build Storybook
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```bash
+$ yarn build-storybook
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Build Next application
+
+```bash
+$ yarn build
+```
+
+3. Try running the production on the local
+
+```bash
+$ yarn start
+```
+
+## Testing
+
+You can easily run the tests as below:
+
+**Note: you need to stop running Storybook development first*
+
+```bash
+$ yarn test
+```
+
+Also, you need to notice about visual testing when it's failed. If you actively make a change that cause the testing to failed, let update snapshot with below steps:
+
+```bash
+# 1. Run Storybook on the local
+$ yarn storybook
+
+# 2. Run script to update snapshot
+$ yarn test-visual:updateSnapshot
+```
+
+If not, please try finding the problem and resolve it.
