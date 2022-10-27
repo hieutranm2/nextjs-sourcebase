@@ -1,10 +1,18 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '@/styles/Home.module.css'
 import { Button } from '@/components/button/Button'
+import styles from '@/styles/Home.module.css'
+import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {
+  const router = useRouter()
+
+  const goToLoginPage = () =>
+    router.push({
+      pathname: '/login',
+    })
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Button primary label="Hieu" />
+        <Button primary label="Login" onClick={goToLoginPage} />
 
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
