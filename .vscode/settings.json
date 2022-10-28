@@ -1,8 +1,15 @@
 {
+  "css.validate": false,
+  "scss.validate": false,
+  "stylelint.validate": ["css", "postcss", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
   "[jsonc]": {
     "editor.formatOnSave": true
+  },
+  "[scss]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
