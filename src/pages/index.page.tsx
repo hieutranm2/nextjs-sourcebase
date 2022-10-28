@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { Button } from '@/components/button/Button'
-import styles from '@/styles/Home.module.css'
+import styles from '@/styles/Home.module.scss'
 import { useRouter } from 'next/router'
 
 const Home: NextPage = () => {

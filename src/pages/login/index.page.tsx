@@ -1,6 +1,6 @@
 import { Button } from '@/components/button/Button'
 import { useRouter } from 'next/router'
-import styles from './Login.module.css'
+import styles from './Login.module.scss'
 
 const Login = () => {
   const router = useRouter()
