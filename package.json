@@ -57,6 +57,7 @@
     "prettier": "^2.7.1",
     "puppeteer": "^19.1.1",
     "sass": "^1.55.0",
+    "storybook-addon-next": "^1.6.9",
     "stylelint": "^14.14.0",
     "stylelint-config-prettier-scss": "^0.0.1",
     "stylelint-config-standard-scss": "^6.0.0",
