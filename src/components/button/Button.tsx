@@ -1,52 +1,27 @@
-import React from 'react'
+import { useMemo } from 'react'
 import styles from './Button.module.scss'
+import clsx from 'clsx'
 
-interface ButtonProps {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
-   * Is this the principal call to action on the page?
+   * The color of button.
    */
-  primary?: boolean
+  color?: 'primary' | 'secondary' | 'error' | 'success' | 'info'
   /**
-   * What background color to use
-   */
-  backgroundColor?: string
-  /**
-   * How large should the button be?
+   * The size of button
    */
   size?: 'small' | 'medium' | 'large'
-  /**
-   * Button contents
-   */
-  label: string
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void
 }
 
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) => {
-  const mode = primary ? 'primary' : 'secondary'
+export const Button = ({ children, color, size = 'medium', ...props }: ButtonProps) => {
+  const colorStyle = useMemo(() => (color ? styles[`button--${color}`] : ''), [color])
+  const sizeStyle = useMemo(() => styles[`button--${size}`], [size])
   return (
-    <button
-      type="button"
-      className={[
-        styles['storybook-button'],
-        styles[`storybook-button--${size}`],
-        styles[`storybook-button--${mode}`],
-      ].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <button type="button" className={clsx(styles.button, colorStyle, sizeStyle)} {...props}>
+      {children}
     </button>
   )
 }

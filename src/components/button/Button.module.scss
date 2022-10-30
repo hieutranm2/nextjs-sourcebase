@@ -1,35 +1,39 @@
-.storybook-button {
-  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  border: 0;
-  border-radius: 3em;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 1;
+.button {
+  @apply border rounded-lg leading-none;
+
+  &:hover {
+    opacity: 0.85;
+  }
 
   &--primary {
-    color: white;
-    background-color: #1ea7fd;
+    @apply bg-sky-600 text-white;
   }
 
   &--secondary {
-    color: #333;
-    background-color: transparent;
-    box-shadow: rgb(0 0 0 / 15%) 0 0 0 1px inset;
+    @apply bg-slate-600 text-white;
+  }
+
+  &--error {
+    @apply bg-red-600 text-white;
+  }
+
+  &--success {
+    @apply bg-green-600 text-white;
+  }
+
+  &--info {
+    @apply bg-blue-600 text-white;
   }
 
   &--small {
-    font-size: 12px;
-    padding: 10px 16px;
+    @apply text-sm py-1 px-2;
   }
 
   &--medium {
-    font-size: 14px;
-    padding: 11px 20px;
+    @apply text-base py-2 px-4;
   }
 
   &--large {
-    font-size: 16px;
-    padding: 12px 24px;
+    @apply text-lg py-3 px-6;
   }
 }

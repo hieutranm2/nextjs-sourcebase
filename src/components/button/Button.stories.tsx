@@ -14,34 +14,43 @@ export default {
 } as ComponentMeta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />
+const Template: ComponentStory<typeof Button> = ({ children, ...args }) => (
+  <Button {...args}>{children}</Button>
+)
 
 export const Default = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Default.args = {
-  label: 'Button',
+  children: 'Button',
 }
 
 export const Primary = Template.bind({})
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Primary',
+  color: 'primary',
+  children: 'Primary',
 }
 
 export const Secondary = Template.bind({})
 Secondary.args = {
-  label: 'Secondary',
+  color: 'secondary',
+  children: 'Secondary',
+}
+
+export const Error = Template.bind({})
+Secondary.args = {
+  color: 'secondary',
+  children: 'Secondary',
 }
 
 export const Large = Template.bind({})
 Large.args = {
   size: 'large',
-  label: 'Large',
+  children: 'Large',
 }
 
 export const Small = Template.bind({})
 Small.args = {
   size: 'small',
-  label: 'Small',
+  children: 'Small',
 }

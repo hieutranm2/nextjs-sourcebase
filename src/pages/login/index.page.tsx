@@ -7,7 +7,9 @@ const Login = () => {
   return (
     <>
       <div className={styles.container}>
-        <Button label="Back" primary size="small" onClick={router.back} />
+        <Button color="secondary" size="small" onClick={router.back}>
+          Back
+        </Button>
         <h1 className={styles.title}>Login</h1>
       </div>
     </>
