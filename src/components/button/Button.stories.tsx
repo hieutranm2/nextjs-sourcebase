@@ -37,12 +37,6 @@ Secondary.args = {
   children: 'Secondary',
 }
 
-export const Error = Template.bind({})
-Secondary.args = {
-  color: 'secondary',
-  children: 'Secondary',
-}
-
 export const Large = Template.bind({})
 Large.args = {
   size: 'large',
