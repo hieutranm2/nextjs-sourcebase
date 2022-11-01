@@ -2,6 +2,17 @@
   "css.validate": false,
   "scss.validate": false,
   "stylelint.validate": ["css", "postcss", "scss"],
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "editor.autoClosingQuotes": "always",
+  "tailwindCSS.experimental.classRegex": [
+    "tw`([^`]*)" // tw`...`
+  ],
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },

@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <Button color="primary" size="large" onClick={goToLoginPage}>
+        <Button color="primary" size="md" onClick={goToLoginPage}>
           Login
         </Button>
 

@@ -1,6 +1,6 @@
 import { Button } from '@/components/button/Button'
 import { useRouter } from 'next/router'
-import styles from './Login.module.scss'
+import styles from './Login.style'
 
 const Login = () => {
   const router = useRouter()
@@ -10,7 +10,7 @@ const Login = () => {
         <Button color="secondary" size="small" onClick={router.back}>
           Back
         </Button>
-        <h1 className={styles.title}>Login</h1>
+        <h1 className="text-2xl">Login</h1>
       </div>
     </>
   )
